@@ -1,0 +1,17 @@
+<table id="fixtable">
+	<thead>
+		<tr>
+			<th ng-repeat="fl in field track by $index">{{fl.title}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in contents track by $index">
+			<td ng-repeat="fl in field track by $index">
+				{{item[fl.name]}}
+			</td>
+		</tr>
+		<tr ng-if="contents.length == 0">
+			<td colspan="{{field.length}}">暂无数据</td>
+		</tr>
+	</tbody>
+</table>
